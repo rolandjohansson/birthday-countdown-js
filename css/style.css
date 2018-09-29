@@ -1,0 +1,168 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  font-size: 1.1rem;
+  background-color: rgb(226, 226, 226);
+}
+
+h1,h2,h3,h4,h5,h6, nav a, .jumbotron, input[type="submit"] {
+  font-family: "Futura";
+}
+
+header {
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: rgba(0,0,0,0.3);
+  position: relative;
+}
+
+header:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: url(../img/clouds-cold-dark-540518.jpg);
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: bottom;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+form label, input {
+  display: block;
+  font-size: 1em;
+}
+
+form input[type="submit"] {
+  background-color: green;
+  color: white;
+  border-width: 0;
+  padding: 1em 1.5em;
+  width: 100%;
+}
+
+form > * {
+  margin-bottom: 1em;
+}
+
+#bday-input {
+  padding: 1em;
+  width: 100%;
+}
+
+#bday-output {
+  text-align: center;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+section {
+  padding: 4em 1em;
+  background-color: #fff;
+}
+
+section h2:first-of-type {
+  margin-top: 0;
+}
+
+section:nth-of-type(even) {
+  background-color: rgb(246, 246, 246);
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+nav li {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  padding: 1em;
+  display: block;
+  text-decoration: none;
+  color: white;
+  text-shadow: 1px 1px 0px rgba(0,0,0,0.5);
+}
+
+.menu-items a {
+  display: none;
+}
+
+.menu-icon {
+  display: block !important;
+}
+
+.material-icons {
+  font-size: inherit;
+}
+
+nav.dropped .menu-items a {
+  display: block;
+  text-align: right;
+}
+
+nav a:hover {
+  background-color: darkslategrey;
+}
+
+.wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.jumbotron {
+  text-align: center;
+  text-shadow: 1px 1px 0px rgba(0,0,0,0.5);
+}
+
+.jumbotron h1 {
+  margin-bottom: 0;
+}
+
+@media only screen and (min-width: 960px) {
+  section {
+    margin: 1em;
+    padding: 1em;
+  }
+
+  nav li {
+    display: inline-block;
+  }
+
+  .menu-items a {
+    display: inline-block;
+  }
+
+  .menu-icon {
+    display: none !important;
+  }
+}

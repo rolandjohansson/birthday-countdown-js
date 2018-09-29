@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>rolandjohansson.se</title>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script src="js/nav-toggle.js" defer></script>
+  <script src="js/bday-countdown-timer.js" defer></script>
+  <script src="js/fade-on-scroll.js" defer></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body id="top">
+  <nav id="topnav">
+    <ul>
+      <div>
+        <li><a href="/">rolandjohansson.se</a></li>
+      </div>
+      <div class="menu-items">
+        <li><a href="javascript:void(0);" class="menu-icon" onclick="navToggle()"><i class="material-icons">menu</i></a></li>
+        <li><a href="#section1">Responsiv navbar</a></li>
+        <li><a href="#section2">Födelsedagskalkylator</a></li>
+        <li><a href="#section3">Fade vid scrollning</a></li>
+        
+      </div>
+    </ul>
+  </nav>
+  <header>
+    <div class="jumbotron">
+      <h1>Cool stuff for HTML, CSS & JS</h1>
+      <small>by Roland Johansson</small>
+   </div>
+  </header>
+  <main>
+    <div class="wrapper">
+      
+      <section id="section1">
+        <h2>Responsiv navbar</h2>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa sed ex quibusdam adipisci quis? Nesciunt iste veniam quaerat mollitia? Voluptas qui quasi architecto ullam asperiores sunt, in laudantium ipsam laborum.</p>
+      </section>
+      <section id="section2">
+        <h2>Födelsedagskalkylator</h2>
+        <form id="birthday-form">
+          <label for="bday-input">När föddes du?</label>
+          <input type="date" name="bday-input" id="bday-input" max="9999-12-31" required>
+          <input type="submit">
+        </form>
+        <p id="bday-output"></p>
+      </section>
+      <section id="section3">
+        <h2>Fade vid scrollning</h2>
+        <code>
+            // ===== Fade on Scroll ===== //
+
+            // Triggers on document scroll
+            $(document).scroll(function() {
+            
+              // Define var for opacity
+              let alpha = 0;
+            
+              // Define var for distance scrolled from top in px
+              let scroll = $(document).scrollTop();
+            
+              // At what px to start the fade in
+              const fadeStart = 100;
+            
+              // At what px to stop the fade in
+              const fadeStop = 200;
+            
+              // Define the length of the fade in
+              const fadeLength = fadeStop - fadeStart;
+            
+              // Three cases
+              if (scroll < fadeStart) {
+                alpha = 0;
+              } 
+              // Alpha will go from 0 to 1 when scroll goes between fade start and fade stop
+              else if (scroll < fadeStop) {
+                alpha = (scroll - fadeStart) / fadeLength;
+              }
+              else {
+                alpha = 1;
+              }
+            
+              // Set the CSS alpha
+              $("nav").css("background-color", "rgba(55,55,55," + alpha + ")");
+            })
+        </code>
+      </section>
+    </div> <!-- / .wrapper -->
+
+  </main>
+
+</body>
+
+</html>
